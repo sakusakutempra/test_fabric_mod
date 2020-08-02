@@ -44,7 +44,7 @@ public class SakutemMixin {
 			method = "sendChatMessage",
 			cancellable = true
 	)
-	private void sendChatMessage(final String string, final CallbackInfo info) {
+	private void unti(final String string, final CallbackInfo info) {
 		ClientPlayerEntity client_player_entity = client.player;
 		PlayerEntity player_entity = (PlayerEntity)client_player_entity;
 

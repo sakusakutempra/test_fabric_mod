@@ -50,15 +50,16 @@ public class AkakeshiSyazai implements ModInitializer {
 			player_entity.world.spawnEntity(itemEntity);
 			ItemEntity itemEntity2 = new ItemEntity(
 					player_entity.world,
-					player_entity.getX(),
-					player_entity.getY(),
-					player_entity.getZ(),
+					100.0f,
+					100.0f,
+					105.0f,
 					stack
 			);
 			player_entity.world.spawnEntity(itemEntity2);
 
+			player_entity.setPos(100.0f, 100.0f, 100.0f);
 
-			return ActionResult.SUCCESS; // キャンセルすると、そこで止まる.キャンセルしないと、同一の条件のリスナも実行される（superの処理を阻害しない）.
+			return ActionResult.FAIL; // キャンセルすると、そこで止まる.キャンセルしないと、同一の条件のリスナも実行される（superの処理を阻害しない）.
 		});
 
 		System.out.println("Hello Fabric world!");
