@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "akakeshi",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Akakeshi Syazai Mod",
+  "description": "When you say some special word, you get some treasure.",
   "authors": [
-    "Me!"
+    "sakusakutempra"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
+    "homepage": "https://twitter.com/sakusakutempra",
     "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
 
@@ -19,7 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "sakutem.AkakeshiSyazai"
     ]
   },
   "mixins": [
@@ -27,9 +27,9 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.7.4",
+    "fabricloader": ">=0.9.0",
     "fabric": "*",
-    "minecraft": "1.16.x"
+    "minecraft": "1.15.x"
   },
   "suggests": {
     "flamingo": "*"
