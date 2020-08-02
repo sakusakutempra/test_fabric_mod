@@ -6,7 +6,8 @@
   "mixins": [
   ],
   "client": [
-    "SakutemMixin"
+    "SakutemMixin",
+    "AttackMixin"
   ],
   "injectors": {
     "defaultRequire": 1
