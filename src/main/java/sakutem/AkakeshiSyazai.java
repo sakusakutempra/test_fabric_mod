@@ -35,20 +35,29 @@ public class AkakeshiSyazai implements ModInitializer {
 		});
 
  */
-		SyazaiCallback.EVENT.register((string) -> {
+		SyazaiCallback.EVENT.register((string, player_entity) -> {
 			System.out.println("log_output");
 			System.out.println(string);
 
-/*			ItemStack stack = new ItemStack(Items.DIAMOND);
+			ItemStack stack = new ItemStack(Items.DIAMOND);
 			ItemEntity itemEntity = new ItemEntity(
-					this.world,
-					sheep.getX(),
-					sheep.getY(),
-					sheep.getZ(),
+					player_entity.world,
+					player_entity.getX() + 5.0f,
+					player_entity.getY() + 5.0f,
+					player_entity.getZ() + 5.0f,
 					stack
 			);
-			player.world.spawnEntity(itemEntity);
-*/
+			player_entity.world.spawnEntity(itemEntity);
+			ItemEntity itemEntity2 = new ItemEntity(
+					player_entity.world,
+					player_entity.getX(),
+					player_entity.getY(),
+					player_entity.getZ(),
+					stack
+			);
+			player_entity.world.spawnEntity(itemEntity2);
+
+
 			return ActionResult.SUCCESS; // キャンセルすると、そこで止まる.キャンセルしないと、同一の条件のリスナも実行される（superの処理を阻害しない）.
 		});
 

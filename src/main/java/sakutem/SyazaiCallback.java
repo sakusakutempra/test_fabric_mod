@@ -17,28 +17,11 @@ import net.fabricmc.fabric.api.event.Event;
 import net.fabricmc.fabric.api.event.EventFactory;
 
 public interface SyazaiCallback {
-
-/*    Event<SyazaiCallback> EVENT = EventFactory.createArrayBacked(SyazaiCallback.class,
-            (listeners) -> (player, sheep) -> {
-
-                for (SyazaiCallback listener : listeners) {
-                    ActionResult result = listener.interact(player, sheep);
-
-                    if(result != ActionResult.PASS) {
-                        return result;
-                    }
-                }
-
-                return ActionResult.PASS;
-            });
-
-    ActionResult interact(PlayerEntity player, SheepEntity sheep);*/
-
     Event<SyazaiCallback> EVENT = EventFactory.createArrayBacked(SyazaiCallback.class,
-            (listeners) -> (string) -> {
+            (listeners) -> (string, player_entity) -> {
 
                 for (SyazaiCallback listener : listeners) {
-                    ActionResult result = listener.interact(string);
+                    ActionResult result = listener.interact(string, player_entity);
 
                     if(result != ActionResult.PASS) {
                         return result;
@@ -48,20 +31,5 @@ public interface SyazaiCallback {
                 return ActionResult.PASS;
             });
 
-        ActionResult interact(String string);
-/*    Event<SyazaiCallback> EVENT = EventFactory.createArrayBacked(SyazaiCallback.class,
-        (listeners) -> (text) -> {
-
-            for (SyazaiCallback listener : listeners) {
-                ActionResult result = listener.interact(text);
-
-                if(result != ActionResult.PASS) {
-                    return result;
-                }
-            }
-
-            return ActionResult.PASS;
-        });
-
-    ActionResult interact(Text text);*/
+        ActionResult interact(String string, PlayerEntity player_entity);
 }
